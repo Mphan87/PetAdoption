@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+{% for pets in listing %}
+
+<li> 
+
+<a href="{{pets.id}}">
+<img src="{{pets.photo_url}}" width="300" height="300">
+{{pets.name}}  
+<b>{% if pets.available %} is available!</b>
+
+{% endif %}
+
+</a>
+
+
+</li>
+
+
+{% endfor %}
+
+
+<br>
+
+    <form>
+        <button formaction="/add" formmethod="GET">Add a Pet</button>
+    </form>
+
+</body>
+
+</html>
